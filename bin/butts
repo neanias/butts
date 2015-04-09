@@ -7,10 +7,8 @@ require_relative '../lib/butts.rb'
 require_relative '../lib/butts/version'
 
 optparse = OptionParser.new do |opts|
-  opts.banner = "Usage: #{File.basename($PROGRAM_NAME)} URL"
-
   opts.on('-h', '--help', 'Display this screen') do
-    puts "Usage: #{File.basename($PROGRAM_NAME)} URL"
+    puts "Usage: #{File.basename($PROGRAM_NAME)} URL1 URL2 ..."
   end
 
   opts.on('-v', '--version', 'Display the version of butts') do
@@ -19,3 +17,7 @@ optparse = OptionParser.new do |opts|
 end
 
 optparse.parse!
+
+ARGV.each do |url|
+  puts Butts.get_short_url(url)
+end
