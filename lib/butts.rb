@@ -1,4 +1,4 @@
-require "butts/version"
+require_relative 'butts/version'
 
 module Butts
   # Your code goes here...
