@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'optparse'
+
+require_relative '../lib/butts'
+
+optparse = OptionParser.new do |opts|
+  opts.on('-h', '--help', 'Display this screen') do
+    puts "Usage: #{File.basename($PROGRAM_NAME)} URL1 URL2 ..."
+  end
+
+  opts.on('-v', '--version', 'Display the version of butts') do
+    puts Butts::VERSION
+  end
+end
+
+optparse.parse!
+
+ARGV.each do |url|
+  puts Butts.get_short_url(url)
+end
