@@ -1,4 +1,4 @@
-# Butts
+# Butts [![Build Status](https://travis-ci.org/neanias/butts.svg?branch=master)](https://travis-ci.org/neanias/butts)
 
 A gem to interact with butts.so for CLI fart noises
 
